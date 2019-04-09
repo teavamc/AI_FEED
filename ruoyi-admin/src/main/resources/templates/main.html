@@ -12,7 +12,7 @@
     <link href="../static/css/main/style.min862f.css" th:href="@{/css/main/style.min862f.css}" rel="stylesheet"/>
 </head>
 
-<body class="gray-bg">
+<body class="gray-bg" onload="main_onload()">
     <div class="wrapper wrapper-content">
         <div class="row">
             <div class="col-sm-12">
@@ -90,17 +90,50 @@
         </div>
         <div class="row">
             <div class="col-sm-3">
-
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>测试图表</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="echarts" id="test_1" style="height:400px;" ></div>
+                    </div>
+                </div>
             </div>
             <div class="col-sm-3">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>测试图表</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="echarts" id="test_2" style="height:400px;" ></div>
+                    </div>
+                </div>
             </div>
             <div class="col-sm-3">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>测试图表</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="echarts" id="test_3" style="height:400px;" ></div>
+                    </div>
+                </div>
             </div>
             <div class="col-sm-3">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>测试图表</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="echarts" id="test_4" style="height:400px;" ></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <script th:src="@{/js/jquery.min.js}"></script>
     <script th:src="@{/js/bootstrap.min.js}"></script>
+    <!--引入main页面的JS文件-->
+    <script th:src="@{/js/view/mian.js}"></script>
 </body>
 </html>
