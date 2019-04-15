@@ -18,15 +18,13 @@ import com.ruoyi.system.service.ISysMenuService;
  * @author ruoyi
  */
 @Controller
-public class SysIndexController extends BaseController
-{
+public class SysIndexController extends BaseController {
     @Autowired
     private ISysMenuService menuService;
 
     // 系统首页
     @GetMapping("/index")
-    public String index(ModelMap mmap)
-    {
+    public String index(ModelMap mmap) {
         // 取身份信息
         SysUser user = ShiroUtils.getSysUser();
         // 根据用户id取出菜单
@@ -39,9 +37,33 @@ public class SysIndexController extends BaseController
 
     // 系统介绍
     @GetMapping("/system/main")
-    public String main(ModelMap mmap)
-    {
+    public String main(ModelMap mmap) {
         mmap.put("version", Global.getVersion());
-        return "main";
+        return "data/main";
+    }
+
+    @GetMapping("/system/temp")
+    public String temp(ModelMap mmap) {
+        mmap.put("version", Global.getVersion());
+        return "data/temp";
+    }
+
+    public String hum(ModelMap mmap) {
+        mmap.put("version", Global.getVersion());
+        return "data/hum";
+    }
+
+
+    @GetMapping("/system/amm")
+    public String amm(ModelMap mmap) {
+        mmap.put("version", Global.getVersion());
+        return "data/amm";
+    }
+
+    @GetMapping("/system/light")
+    public String light(ModelMap mmap) {
+        mmap.put("version", Global.getVersion());
+        return "data/light";
     }
 }
+
