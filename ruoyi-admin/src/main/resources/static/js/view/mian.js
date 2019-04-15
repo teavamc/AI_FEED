@@ -25,11 +25,24 @@ function init_echarts_1() {
     var ec_test_1 = echarts.init(document.getElementById('test_1'));
 
     option = {
-        color: ['#3398DB'],
+        title: {
+            text: ''
+        },
         tooltip : {
             trigger: 'axis',
-            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            axisPointer: {
+                type: 'cross',
+                label: {
+                    backgroundColor: '#6a7985'
+                }
+            }
+        },
+        legend: {
+            data:['温度','湿度','氨气','光照']
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
             }
         },
         grid: {
@@ -41,10 +54,8 @@ function init_echarts_1() {
         xAxis : [
             {
                 type : 'category',
-                data : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                axisTick: {
-                    alignWithLabel: true
-                }
+                boundaryGap : false,
+                data : ['周一','周二','周三','周四','周五','周六','周日']
             }
         ],
         yAxis : [
@@ -54,11 +65,40 @@ function init_echarts_1() {
         ],
         series : [
             {
-                name:'直接访问',
-                type:'bar',
-                barWidth: '60%',
-                data:[10, 52, 200, 334, 390, 330, 220]
-            }
+                name:'光照',
+                type:'line',
+                stack: '总量',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                areaStyle: {normal: {}},
+                data:[125, 130, 135, 140, 145, 150, 155]
+            },
+            {
+                name:'温度',
+                type:'line',
+                stack: '总量',
+                areaStyle: {},
+                data:[18, 20, 21, 24, 28, 15, 16]
+            },
+            {
+                name:'湿度',
+                type:'line',
+                stack: '总量',
+                areaStyle: {},
+                data:[20, 19, 21, 14, 20, 19, 20]
+            },
+            {
+                name:'氨气',
+                type:'line',
+                stack: '总量',
+                areaStyle: {normal: {}},
+                data:[2.36, 2.56, 2.34, 2.04, 2.65, 2.12, 2.30]
+            },
+
         ]
     };
 
